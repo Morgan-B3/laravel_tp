@@ -20,9 +20,24 @@
                             <div class="hidden md:block">
                                 <div class="ml-10 flex items-baseline space-x-4">
                                     <!-- Current: "bg-gray-900 text-white", Default: "text-gray-300 hover:bg-gray-700 hover:text-white" -->
-                                    <a href="/home" class="rounded-md bg-gray-900 px-3 py-2 text-sm font-medium text-white" aria-current="page">Accueil</a>
-                                    <a href="/about" class="rounded-md px-3 py-2 text-sm font-medium text-gray-300 hover:bg-gray-700 hover:text-white">A propos</a>
-                                    <a href="/contact" class="rounded-md px-3 py-2 text-sm font-medium text-gray-300 hover:bg-gray-700 hover:text-white">Contact</a>
+                                    <x-navlink>
+                                        <x-slot:heading>
+                                            home
+                                        </x-slot:heading>
+                                        Accueil
+                                    </x-navlink>
+                                    <x-navlink>
+                                        <x-slot:heading>
+                                            about
+                                        </x-slot:heading>
+                                        A propos
+                                    </x-navlink>
+                                    <x-navlink>
+                                        <x-slot:heading>
+                                            contact
+                                        </x-slot:heading>
+                                        Contact
+                                    </x-navlink>
                                 </div>
                             </div>
                         </div>
