@@ -1,17 +1,14 @@
-@extends('layouts.app')
+<x-layout>
+    <x-slot:heading>
+        Accueil
+    </x-slot:heading>
 
-@section('content')
+    @isset($name)
+        <h2>Bienvenue sur Laravel, {{$name}}</h2>
+    @else
+        <h2>Bienvenue sur Laravel</h2>
+    @endisset
+    
+</x-layout>
 
-@isset($name)
-    <h1>Bienvenue sur Laravel, {{$name}}</h1>
-@else
-    <h1>Bienvenue sur Laravel</h1>
-@endisset
-
-<ul>
-    <li><a href="http://127.0.0.1:8000/contact">Contact</a></li>
-    <li><a href="http://127.0.0.1:8000/contact">A propos</a></li>
-</ul>
-
-@endsection
 

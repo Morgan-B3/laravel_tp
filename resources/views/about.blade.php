@@ -1,8 +1,10 @@
-@extends('layouts.app')
+<x-layout>
+    <x-slot:heading>
+        A propos
+    </x-slot:heading>
 
-@section('content')
-
-<h1>A propos</h1>
-
-
-@endsection
+    <p>
+        Lorem ipsum dolor sit amet consectetur adipisicing elit
+    </p>
+    
+</x-layout>
