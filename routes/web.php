@@ -1,5 +1,6 @@
 <?php
 
+use App\Models\Member;
 use Illuminate\Support\Facades\Route;
 
 Route::get('/', function () {
@@ -17,6 +18,15 @@ Route::get('/contact', function () {
     return view('contact', ['title' => 'Contact']);
 });
 
-Route::get('/about', function () {
-    return view('about', ['title' => 'A propos']);
+Route::get('/about/{id?}', function ($id = null) {
+    $members = Member::getAllMembers();
+    if ($id != null) {
+        $member = Member::find($id);
+    }
+
+    return view('about', [
+        'title' => 'A propos',
+        "team" => $members,
+        'member' =>  $member ?? null
+    ]);
 });
