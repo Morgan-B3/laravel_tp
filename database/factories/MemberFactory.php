@@ -2,6 +2,7 @@
 
 namespace Database\Factories;
 
+use App\Models\Team;
 use Illuminate\Database\Eloquent\Factories\Factory;
 
 /**
@@ -19,6 +20,14 @@ class MemberFactory extends Factory
         return [
             'name' => fake()->name(),
             'job' => fake()->jobTitle(),
+            'team_id' => Team::factory(),
         ];
+    }
+
+    public function admin(): static
+    {
+        return $this->state(fn (array $attributes) => [
+            'is_admin' => true,
+        ]);
     }
 }
