@@ -1,6 +1,7 @@
 <?php
 
 use App\Models\Member;
+use App\Models\Team;
 use Illuminate\Support\Facades\Route;
 
 Route::get('/members', function () {
@@ -38,7 +39,7 @@ Route::get('/contact', function () {
 });
 
 Route::get('/about/{id?}', function ($id = null) {
-    $members = Member::all();
+    $members = Member::with('team')->paginate(10);
     if ($id != null) {
         $member = Member::findOrFail($id);
     }

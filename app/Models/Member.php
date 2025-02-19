@@ -16,4 +16,9 @@ class Member extends Model
         'job',
         'is_admin',
     ];
+
+    public function team()
+    {
+        return $this->belongsTo(Team::class);
+    }
 }

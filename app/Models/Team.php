@@ -9,4 +9,15 @@ class Team extends Model
 {
     /** @use HasFactory<\Database\Factories\TeamFactory> */
     use HasFactory;
+
+    protected $table = 'teams';
+
+    protected $fillable = [
+        'name',
+    ];
+
+    public function members()
+    {
+        return $this->hasMany(Member::class);
+    }
 }

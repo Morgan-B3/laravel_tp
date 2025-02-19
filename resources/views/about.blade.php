@@ -8,6 +8,9 @@
         <p>
             {{$member['name']}} est {{$member['job']}}
         </p>
+        <p>
+            Equipe : {{$member->team->name}}
+        </p>
 
     @else
         <x-slot:heading>
@@ -21,6 +24,9 @@
                 </li>
             @endforeach
         </ul>
+        <div>
+            {{$team->links()}}
+        </div>
     @endisset
-    
+
 </x-layout>
