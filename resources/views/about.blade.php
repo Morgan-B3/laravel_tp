@@ -2,7 +2,7 @@
     @isset($member)
 
         <x-slot:heading>
-            A propos de {{$member['name']}}
+            A propos de {{$member->name}}
         </x-slot:heading>
 
         <p>
